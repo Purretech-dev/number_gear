@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Number Gear</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar" aria-label="Number Gear progress">
+        <div>
+          <p class="eyebrow">Pre-primary maths</p>
+          <h1>Number Gear</h1>
+        </div>
+        <div class="progress-card" aria-live="polite">
+          <span class="progress-label">Numbers learned</span>
+          <strong id="masteredCount">0 / 100</strong>
+          <div class="progress-track" aria-hidden="true">
+            <span id="progressFill"></span>
+          </div>
+        </div>
+      </header>
+
+      <nav class="level-tabs" aria-label="Levels">
+        <button class="tab active" id="levelOneTab" type="button">
+          <span>1</span>
+          Identify
+        </button>
+        <button class="tab locked" id="levelTwoTab" type="button" aria-disabled="true">
+          <span>2</span>
+          Counters
+        </button>
+        <button class="tab locked" id="levelThreeTab" type="button" aria-disabled="true">
+          <span>3</span>
+          Number Gear 1
+        </button>
+        <button class="tab locked" id="levelFourTab" type="button" aria-disabled="true">
+          <span>4</span>
+          Number Gear 2
+        </button>
+        <button class="tab locked" id="levelFiveTab" type="button" aria-disabled="true">
+          <span>5</span>
+          Prime Gear
+        </button>
+      </nav>
+
+      <section class="level level-one active" id="levelOne" aria-labelledby="levelOneTitle">
+        <p class="eyebrow level-kicker">Level 1</p>
+        <section class="hundred-chart" aria-label="Numbers 1 to 100">
+          <div class="chart-heading">
+            <div>
+              <p class="eyebrow">Learn first</p>
+              <h2>Number map</h2>
+            </div>
+            <span id="mapBatchStatus">Batch 1: 1-20</span>
+          </div>
+          <div class="number-grid batch-grid" id="numberGrid"></div>
+          <div class="batch-controls">
+            <button class="secondary-action" id="previousBatch" type="button">Previous batch</button>
+            <button class="primary-action" id="nextBatch" type="button">Next batch</button>
+          </div>
+        </section>
+
+        <div class="level-header">
+          <div>
+            <h2 id="levelOneTitle">Find the number</h2>
+            <div class="lesson-tabs" id="lessonTabs" aria-label="Number lessons"></div>
+          </div>
+          <div class="round-status">
+            <span id="levelOneMessage">Listen, look, then tap the matching number.</span>
+          </div>
+        </div>
+
+        <div class="learning-board">
+          <article class="prompt-panel">
+            <div class="sign-card" id="signCard" aria-label="Number clue">
+              <span class="sign-number" id="targetNumber">1</span>
+              <span class="sign-word" id="targetWord">one</span>
+              <div class="place-value" id="placeValue"></div>
+            </div>
+            <button class="primary-action" id="speakButton" type="button">Say number</button>
+          </article>
+
+          <article class="choice-panel">
+            <div class="choice-grid" id="choiceGrid"></div>
+            <button class="secondary-action" id="nextButton" type="button">New number</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="level level-two" id="levelTwo" aria-labelledby="levelTwoTitle">
+        <div class="level-header">
+          <div>
+            <p class="eyebrow">Level 2</p>
+            <h2 id="levelTwoTitle">Counters</h2>
+          </div>
+          <div class="round-status">
+            Start with sticks, fruits, and toys before using the number gear.
+          </div>
+        </div>
+
+        <section class="counter-practice" aria-label="Counter practice">
+          <p class="eyebrow">Step 1</p>
+          <h3>Start with counters</h3>
+          <div class="practice-tabs" aria-label="Practice type">
+            <button class="practice-tab active" id="beginnerCountersTab" type="button">Beginner</button>
+            <button class="practice-tab" id="countersTab" type="button">Counters</button>
+            <button class="practice-tab" id="countThingsTab" type="button">Count things</button>
+          </div>
+
+          <div class="counter-panel active" id="beginnerCountersPanel">
+            <p class="practice-note">Count the objects, name them, then tap the number that matches how many you can see.</p>
+            <div class="operation-tabs" aria-label="Beginner counter examples">
+              <button class="operation-tab" id="resetBeginnerExamples" type="button">Reset</button>
+            </div>
+            <div class="formula-row" id="beginnerFormulaRow"></div>
+            <div class="beginner-count-card" aria-live="polite">
+              <div>
+                <span class="counter-label" id="beginnerObjectName">Balls</span>
+                <div class="beginner-items" id="beginnerItems"></div>
+              </div>
+              <div class="beginner-write-number" id="beginnerPrompt">Write 3</div>
+            </div>
+            <div class="beginner-choice-row" id="beginnerChoiceRow" aria-label="Choose the matching number"></div>
+            <p class="beginner-feedback" id="beginnerFeedback">Count each ball, then choose the number.</p>
+          </div>
+
+          <div class="counter-panel" id="countersPanel">
+            <p class="practice-note">Choose Addition or Subtraction, pick a formula, then press Add or Subtract to see the sticks count the answer.</p>
+            <div class="operation-tabs" aria-label="Counter operation">
+              <button class="operation-tab active" id="additionTab" type="button">Addition</button>
+              <button class="operation-tab" id="subtractionTab" type="button">Subtraction</button>
+              <button class="operation-tab" id="resetExamples" type="button">Reset</button>
+            </div>
+
+            <div class="formula-row" id="formulaRow"></div>
+            <div class="counter-equation" id="counterEquation">1 + 1 = ?</div>
+            <button class="primary-action" id="computeCounters" type="button">Add</button>
+            <div class="counter-stage" id="counterStage" aria-live="polite"></div>
+          </div>
+
+          <div class="counter-panel" id="countThingsPanel">
+            <p class="practice-note">Use this section to count objects one by one, match them to a number, and say how many things are there.</p>
+            <div class="thing-tabs" aria-label="Choose things to count">
+              <button class="thing-tab active" id="fruitsTab" type="button">Fruits</button>
+              <button class="thing-tab" id="toysTab" type="button">Toys</button>
+            </div>
+            <div class="operation-tabs" aria-label="Things operation">
+              <button class="operation-tab active" id="thingsAdditionTab" type="button">Addition</button>
+              <button class="operation-tab" id="thingsSubtractionTab" type="button">Subtraction</button>
+              <button class="operation-tab" id="resetThingsExamples" type="button">Reset</button>
+            </div>
+            <div class="formula-row" id="thingsFormulaRow"></div>
+            <div class="counter-equation" id="thingsEquation">2 + 1 = ?</div>
+            <button class="primary-action" id="computeThings" type="button">Add</button>
+            <div class="things-stage" id="thingsStage" aria-live="polite"></div>
+          </div>
+        </section>
+      </section>
+
+      <section class="level level-three" id="levelThree" aria-labelledby="levelThreeTitle">
+        <div class="level-header">
+          <div>
+            <p class="eyebrow">Level 3</p>
+            <h2 id="levelThreeTitle">Number Gear 1</h2>
+          </div>
+          <div class="round-status" id="gearMessage">
+            Select a plane and move it with the arrows.
+          </div>
+        </div>
+
+        <section class="gear-section" aria-label="Number gear practice">
+          <p class="eyebrow">Gear practice</p>
+          <h3>Move the number gear</h3>
+          <article class="gear-stage">
+            <div class="gear-instruction">
+              Select a plane by clicking it, then use the right and left arrows to move the plane. Click Reset to put the gear back in place.
+            </div>
+            <button class="primary-action gear-mode-button" id="toggleGearOperation" type="button">Use gear to do addition and subtraction</button>
+            <div class="gear-operation-panel" id="gearOperationPanel" aria-live="polite">
+              <div class="operation-tabs" aria-label="Gear operation">
+                <button class="operation-tab active" id="gearAdditionTab" type="button">Addition</button>
+                <button class="operation-tab" id="gearSubtractionTab" type="button">Subtraction</button>
+                <button class="operation-tab" id="resetGearOperation" type="button">Next plane example</button>
+              </div>
+              <div class="gear-example-list" id="gearExampleList" aria-label="Choose a gear example"></div>
+              <div class="gear-operation-equation" id="gearOperationEquation">1 + 2 = 3</div>
+              <p class="gear-operation-explanation" id="gearOperationExplanation">
+                Plane 1 counts in ones. Find 1, then move 2 steps clockwise to reach 3.
+              </p>
+            </div>
+            <div class="gear-popup" id="gearOperationPopup" aria-live="polite" role="dialog" aria-modal="true" aria-labelledby="gearPopupTitle">
+              <div class="gear-popup-card">
+                <h4 id="gearPopupTitle">Use the gear</h4>
+                <p id="gearPopupText">Identify the start number, then move on the gear.</p>
+                <button class="primary-action" id="closeGearPopup" type="button">Got it</button>
+              </div>
+            </div>
+            <div class="basic-plane-tools" aria-label="Number Gear 1 plane counters">
+              <div class="selected-plane-card">
+                <span>Selected plane</span>
+                <strong id="selectedPlaneLabel">Plane 1</strong>
+                <em id="selectedPlaneRange">1-10</em>
+              </div>
+              <div class="selected-plane-numbers basic-selected-numbers" id="selectedPlaneNumbers" aria-label="Numbers on selected plane"></div>
+              <div class="plane-picker basic-plane-picker" id="planePicker"></div>
+            </div>
+            <div class="gear" id="gear" aria-label="Circular number gear"></div>
+            <div class="gear-controls">
+              <button class="icon-button" id="spinLeft" type="button" aria-label="Turn selected plane left">&lsaquo;</button>
+              <button class="icon-button" id="spinRight" type="button" aria-label="Turn selected plane right">&rsaquo;</button>
+              <button class="gear-action" id="shuffleGear" type="button">Mix</button>
+              <button class="gear-action" id="alignGear" type="button">Reset</button>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <section class="level level-four" id="levelFour" aria-labelledby="levelFourTitle">
+        <div class="level-header">
+          <div>
+            <p class="eyebrow">Level 4</p>
+            <h2 id="levelFourTitle">Number Gear 2</h2>
+          </div>
+          <div class="round-status" id="advancedGearMessage">
+            Select a colored plane, then move it with the arrows.
+          </div>
+        </div>
+
+        <section class="gear-section advanced-gear-section" aria-label="Advanced number gear practice">
+          <p class="eyebrow">Gear practice</p>
+          <h3>Arrange the 11 to 220 number gear</h3>
+          <article class="gear-stage advanced-gear-stage">
+            <div class="gear-instruction advanced-gear-instruction">
+              Start at the top guide. The inner plane reads 11-20. Each plane outside it adds the same number again, so the top line becomes 11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121. Mix the gear, choose one plane counter, then turn that plane until its numbers line up with the guide. Reset returns every plane to the correct starting position.
+            </div>
+            <div class="advanced-gear-layout">
+              <div class="gear advanced-gear" id="advancedGear" aria-label="Circular number gear from 11 to 220"></div>
+              <aside class="plane-counter-panel" aria-label="Plane counters">
+                <div class="selected-plane-card">
+                  <span>Selected plane</span>
+                  <strong id="advancedSelectedPlane">Plane 1</strong>
+                  <em id="advancedSelectedRange">11-20</em>
+                </div>
+                <div class="selected-plane-numbers" id="advancedSelectedNumbers" aria-label="Numbers on selected plane"></div>
+                <div class="advanced-plane-picker" id="advancedPlanePicker"></div>
+              </aside>
+            </div>
+            <div class="gear-controls">
+              <button class="icon-button" id="advancedSpinLeft" type="button" aria-label="Turn selected advanced plane left">&lsaquo;</button>
+              <button class="icon-button" id="advancedSpinRight" type="button" aria-label="Turn selected advanced plane right">&rsaquo;</button>
+              <button class="gear-action" id="advancedShuffleGear" type="button">Mix</button>
+              <button class="gear-action" id="advancedResetGear" type="button">Reset</button>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <section class="level level-five" id="levelFive" aria-labelledby="levelFiveTitle">
+        <div class="level-header">
+          <div>
+            <p class="eyebrow">Level 5</p>
+            <h2 id="levelFiveTitle">Prime Number Gear</h2>
+          </div>
+          <div class="round-status" id="primeGearMessage">
+            Select a prime plane, then move it with the arrows.
+          </div>
+        </div>
+
+        <section class="gear-section prime-gear-section" aria-label="Prime number gear practice">
+          <p class="eyebrow">Gear practice</p>
+          <h3>Arrange the prime number gear</h3>
+          <article class="gear-stage advanced-gear-stage">
+            <div class="gear-instruction advanced-gear-instruction">
+              Prime numbers are greater than 1 and have exactly two factors: 1 and the number itself. This gear shows the first 100 prime numbers in 10 colored planes. Mix the planes, choose a plane counter, then turn each plane until the first prime number on that plane reaches the top guide.
+            </div>
+            <div class="advanced-gear-layout">
+              <div class="gear advanced-gear prime-gear" id="primeGear" aria-label="Circular prime number gear"></div>
+              <aside class="plane-counter-panel" aria-label="Prime plane counters">
+                <div class="selected-plane-card">
+                  <span>Selected plane</span>
+                  <strong id="primeSelectedPlane">Plane 1</strong>
+                  <em id="primeSelectedRange">2-29</em>
+                </div>
+                <div class="selected-plane-numbers" id="primeSelectedNumbers" aria-label="Prime numbers on selected plane"></div>
+                <div class="advanced-plane-picker" id="primePlanePicker"></div>
+              </aside>
+            </div>
+            <div class="gear-controls">
+              <button class="icon-button" id="primeSpinLeft" type="button" aria-label="Turn selected prime plane left">&lsaquo;</button>
+              <button class="icon-button" id="primeSpinRight" type="button" aria-label="Turn selected prime plane right">&rsaquo;</button>
+              <button class="gear-action" id="primeShuffleGear" type="button">Mix</button>
+              <button class="gear-action" id="primeResetGear" type="button">Reset</button>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <footer class="app-footer">
+        &copy; 2026 Developed by Purretech Solutions
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
