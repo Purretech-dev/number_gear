@@ -34,6 +34,267 @@ const tensWords = [
   "ninety",
 ];
 
+const languagePacks = {
+  en: {
+    name: "English",
+    locale: "en-KE",
+    dir: "ltr",
+    numbers: {
+      belowTwenty: wordsBelowTwenty,
+      tens: tensWords,
+      hundred: "one hundred",
+    },
+    text: {
+      interpreterTitle: "Visual interpreter",
+      interpreterGesture: "Look and listen",
+      interpreterIntro: "Choose a language, then tap numbers and buttons. I will guide you here.",
+      levelSelected: "You selected Level {level}. Follow the activity on the screen.",
+      numberTouched: "This is number {number}. Listen, look, and remember its shape.",
+      sayNumber: "Listen carefully. This number is {number}.",
+      findNumber: "Lesson {lesson}: look at the sign, then tap the matching number.",
+      correct: "{number}, very good.",
+      wrong: "Try again, this is number {number}.",
+      lessonComplete: "You have completed this lesson.",
+      lessonCompleteText: "Lesson {lesson} complete. You can keep practising or choose another lesson.",
+      mapFirst: "First tap and listen to all numbers in the number map.",
+      mapComplete: "Great job! You have learnt numbers 1 to 100. Now start number identification.",
+      allDone: "Great job! You have successfully completed Level 1. Level 2 is now unlocked.",
+      nextLocked: "The next levels open after all 100 numbers are learned.",
+      gearOpen: "Level 3 is open. Spin and solve the gear.",
+      advancedOpen: "Level 4 is open. Mix the planes, then arrange 11 to 220.",
+      primeOpen: "Level 5 is open. Explore the prime number gear.",
+      planeSelected: "Plane {plane} selected. Its numbers are {start} to {end}.",
+      gearMixed: "The planes are mixed. Turn each plane back to the top guide.",
+      gearReset: "Reset. The top guide now reads 1 to 10 from inside to outside.",
+      advancedPlaneSelected: "Plane {plane} selected. Its numbers are {start} to {end}.",
+      advancedMixed: "The colored planes are mixed. Pick a plane counter, then line it back up with the top guide.",
+      advancedReset: "Reset. The top guide is back in the correct order.",
+      primePlaneSelected: "Plane {plane} selected. These prime numbers are {start} to {end}.",
+      primeMixed: "The prime planes are mixed. Pick a plane counter, then line it up with the top guide.",
+      primeReset: "Reset. The prime gear is back at the starting guide.",
+      addGuide: "Add means put the groups together, then count all of them.",
+      subtractGuide: "Subtract means take some away, then count what remains.",
+      rotateGuide: "Use the arrows to turn the selected plane.",
+      languageChanged: "Language changed to {language}.",
+    },
+  },
+  sw: {
+    name: "Kiswahili (Kenya)",
+    locale: "sw-KE",
+    dir: "ltr",
+    numbers: {
+      belowTwenty: ["sifuri", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja", "kumi na mbili", "kumi na tatu", "kumi na nne", "kumi na tano", "kumi na sita", "kumi na saba", "kumi na nane", "kumi na tisa"],
+      tens: ["", "", "ishirini", "thelathini", "arobaini", "hamsini", "sitini", "sabini", "themanini", "tisini"],
+      hundred: "mia moja",
+    },
+    text: {
+      interpreterTitle: "Mkalimani wa Lugha ya Ishara ya Kenya",
+      interpreterGesture: "Tazama na sikiliza",
+      interpreterIntro: "Chagua Kiswahili cha Kenya, kisha gusa nambari na vitufe. Nitakuongoza hapa.",
+      levelSelected: "Umechagua Kiwango {level}. Fuata zoezi lililo kwenye skrini.",
+      numberTouched: "Hii ni nambari {number}. Sikiliza, tazama, na ukumbuke umbo lake.",
+      sayNumber: "Sikiliza kwa makini. Nambari hii ni {number}.",
+      findNumber: "Somo {lesson}: tazama alama, kisha gusa nambari inayofanana.",
+      correct: "{number}, vizuri sana.",
+      wrong: "Jaribu tena, hii ni nambari {number}.",
+      lessonComplete: "Umekamilisha somo hili.",
+      lessonCompleteText: "Somo {lesson} limekamilika. Unaweza kuendelea kufanya mazoezi au kuchagua somo jingine.",
+      mapFirst: "Kwanza gusa na sikiliza nambari zote kwenye ramani ya nambari.",
+      mapComplete: "Hongera! Umejifunza nambari 1 hadi 100. Sasa anza kutambua nambari.",
+      allDone: "Hongera! Umekamilisha Kiwango 1. Kiwango 2 kimefunguliwa.",
+      nextLocked: "Viwango vinavyofuata hufunguka baada ya kujifunza nambari zote 100.",
+      gearOpen: "Kiwango 3 kimefunguliwa. Zungusha na utatue gia ya nambari.",
+      advancedOpen: "Kiwango 4 kimefunguliwa. Changanya sehemu, kisha panga 11 hadi 220.",
+      primeOpen: "Kiwango 5 kimefunguliwa. Chunguza gia ya nambari kuu.",
+      planeSelected: "Ndege {plane} imechaguliwa. Namba zake ni {start} hadi {end}.",
+      gearMixed: "Sehemu zimechanganywa. Zungusha kila sehemu irudi kwenye mwongozo wa juu.",
+      gearReset: "Imewekwa upya. Mwongozo wa juu unasoma 1 hadi 10 kutoka ndani kwenda nje.",
+      advancedPlaneSelected: "Ndege {plane} imechaguliwa. Namba zake ni {start} hadi {end}.",
+      advancedMixed: "Sehemu za rangi zimechanganywa. Chagua sehemu, kisha ipange kwenye mwongozo wa juu.",
+      advancedReset: "Imewekwa upya. Mwongozo wa juu umerudi katika mpangilio sahihi.",
+      primePlaneSelected: "Ndege {plane} imechaguliwa. Namba kuu zake ni {start} hadi {end}.",
+      primeMixed: "Sehemu za nambari kuu zimechanganywa. Chagua sehemu, kisha ipange kwenye mwongozo.",
+      primeReset: "Imewekwa upya. Gia ya nambari kuu imerudi mwanzo.",
+      addGuide: "Kuongeza ni kuweka makundi pamoja, kisha kuhesabu yote.",
+      subtractGuide: "Kutoa ni kuondoa baadhi, kisha kuhesabu vilivyobaki.",
+      rotateGuide: "Tumia mishale kuzungusha sehemu iliyochaguliwa.",
+      languageChanged: "Lugha imebadilishwa kuwa {language}.",
+    },
+  },
+  fr: {
+    name: "French",
+    locale: "fr-FR",
+    dir: "ltr",
+    numbers: {
+      belowTwenty: ["zero", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf"],
+      tens: ["", "", "vingt", "trente", "quarante", "cinquante", "soixante", "soixante-dix", "quatre-vingts", "quatre-vingt-dix"],
+      hundred: "cent",
+    },
+    text: {
+      interpreterTitle: "Interprete visuel",
+      interpreterGesture: "Regarde et ecoute",
+      interpreterIntro: "Choisis une langue, puis touche les nombres et les boutons. Je te guide ici.",
+      levelSelected: "Tu as choisi le niveau {level}. Suis l'activite sur l'ecran.",
+      numberTouched: "Ceci est le nombre {number}. Ecoute, regarde et retiens sa forme.",
+      sayNumber: "Ecoute bien. Ce nombre est {number}.",
+      findNumber: "Lecon {lesson}: regarde le signe, puis touche le bon nombre.",
+      correct: "{number}, tres bien.",
+      wrong: "Essaie encore, ceci est le nombre {number}.",
+      lessonComplete: "Tu as termine cette lecon.",
+      lessonCompleteText: "Lecon {lesson} terminee. Tu peux continuer ou choisir une autre lecon.",
+      mapFirst: "Touche et ecoute d'abord tous les nombres sur la carte.",
+      mapComplete: "Bravo! Tu as appris les nombres de 1 a 100. Commence maintenant l'identification.",
+      allDone: "Bravo! Tu as termine le niveau 1. Le niveau 2 est ouvert.",
+      nextLocked: "Les niveaux suivants s'ouvrent apres les 100 nombres.",
+      gearOpen: "Le niveau 3 est ouvert. Fais tourner l'engrenage.",
+      advancedOpen: "Le niveau 4 est ouvert. Melange puis arrange 11 a 220.",
+      primeOpen: "Le niveau 5 est ouvert. Explore l'engrenage des nombres premiers.",
+      planeSelected: "Plan {plane} choisi. Ses nombres vont de {start} a {end}.",
+      gearMixed: "Les plans sont melanges. Ramene chaque plan au guide du haut.",
+      gearReset: "Reinitialise. Le guide du haut lit 1 a 10 de l'interieur vers l'exterieur.",
+      advancedPlaneSelected: "Plan {plane} choisi. Ses nombres vont de {start} a {end}.",
+      advancedMixed: "Les plans colores sont melanges. Choisis un plan et aligne-le.",
+      advancedReset: "Reinitialise. Le guide du haut est correct.",
+      primePlaneSelected: "Plan {plane} choisi. Ces nombres premiers vont de {start} a {end}.",
+      primeMixed: "Les plans premiers sont melanges. Choisis un plan et aligne-le.",
+      primeReset: "Reinitialise. L'engrenage premier revient au debut.",
+      addGuide: "Additionner veut dire mettre les groupes ensemble, puis tout compter.",
+      subtractGuide: "Soustraire veut dire enlever, puis compter ce qui reste.",
+      rotateGuide: "Utilise les fleches pour tourner le plan choisi.",
+      languageChanged: "Langue changee en {language}.",
+    },
+  },
+  es: {
+    name: "Spanish",
+    locale: "es-ES",
+    dir: "ltr",
+    numbers: {
+      belowTwenty: ["cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez", "once", "doce", "trece", "catorce", "quince", "dieciseis", "diecisiete", "dieciocho", "diecinueve"],
+      tens: ["", "", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"],
+      hundred: "cien",
+    },
+    text: {
+      interpreterTitle: "Interprete visual",
+      interpreterGesture: "Mira y escucha",
+      interpreterIntro: "Elige un idioma, toca numeros y botones. Te guiare aqui.",
+      levelSelected: "Elegiste el nivel {level}. Sigue la actividad en la pantalla.",
+      numberTouched: "Este es el numero {number}. Escucha, mira y recuerda su forma.",
+      sayNumber: "Escucha bien. Este numero es {number}.",
+      findNumber: "Leccion {lesson}: mira la senal y toca el numero correcto.",
+      correct: "{number}, muy bien.",
+      wrong: "Intentalo otra vez, este es el numero {number}.",
+      lessonComplete: "Has completado esta leccion.",
+      lessonCompleteText: "Leccion {lesson} completa. Puedes seguir practicando o elegir otra leccion.",
+      mapFirst: "Primero toca y escucha todos los numeros del mapa.",
+      mapComplete: "Muy bien! Aprendiste los numeros del 1 al 100. Ahora identifica numeros.",
+      allDone: "Muy bien! Completaste el nivel 1. El nivel 2 esta abierto.",
+      nextLocked: "Los siguientes niveles se abren despues de aprender los 100 numeros.",
+      gearOpen: "El nivel 3 esta abierto. Gira y resuelve el engranaje.",
+      advancedOpen: "El nivel 4 esta abierto. Mezcla y ordena del 11 al 220.",
+      primeOpen: "El nivel 5 esta abierto. Explora el engranaje de numeros primos.",
+      planeSelected: "Plano {plane} seleccionado. Sus numeros van de {start} a {end}.",
+      gearMixed: "Los planos estan mezclados. Vuelve cada plano a la guia de arriba.",
+      gearReset: "Reiniciado. La guia lee 1 a 10 desde dentro hacia fuera.",
+      advancedPlaneSelected: "Plano {plane} seleccionado. Sus numeros van de {start} a {end}.",
+      advancedMixed: "Los planos de colores estan mezclados. Elige uno y alinealo.",
+      advancedReset: "Reiniciado. La guia superior esta correcta.",
+      primePlaneSelected: "Plano {plane} seleccionado. Sus primos van de {start} a {end}.",
+      primeMixed: "Los planos primos estan mezclados. Elige uno y alinealo.",
+      primeReset: "Reiniciado. El engranaje primo vuelve al inicio.",
+      addGuide: "Sumar es juntar grupos y luego contarlos todos.",
+      subtractGuide: "Restar es quitar algunos y contar lo que queda.",
+      rotateGuide: "Usa las flechas para girar el plano seleccionado.",
+      languageChanged: "Idioma cambiado a {language}.",
+    },
+  },
+  pt: {
+    name: "Portuguese",
+    locale: "pt-PT",
+    dir: "ltr",
+    numbers: {
+      belowTwenty: ["zero", "um", "dois", "tres", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze", "doze", "treze", "catorze", "quinze", "dezasseis", "dezassete", "dezoito", "dezanove"],
+      tens: ["", "", "vinte", "trinta", "quarenta", "cinquenta", "sessenta", "setenta", "oitenta", "noventa"],
+      hundred: "cem",
+    },
+    text: {
+      interpreterTitle: "Interprete visual",
+      interpreterGesture: "Olha e escuta",
+      interpreterIntro: "Escolhe uma lingua, toca nos numeros e botoes. Vou guiar-te aqui.",
+      levelSelected: "Escolheste o nivel {level}. Segue a atividade no ecra.",
+      numberTouched: "Este e o numero {number}. Escuta, olha e lembra a forma.",
+      sayNumber: "Escuta com atencao. Este numero e {number}.",
+      findNumber: "Licao {lesson}: olha para o sinal e toca no numero certo.",
+      correct: "{number}, muito bem.",
+      wrong: "Tenta de novo, este e o numero {number}.",
+      lessonComplete: "Completaste esta licao.",
+      lessonCompleteText: "Licao {lesson} completa. Podes continuar ou escolher outra licao.",
+      mapFirst: "Primeiro toca e escuta todos os numeros no mapa.",
+      mapComplete: "Muito bem! Aprendeste os numeros de 1 a 100. Agora identifica numeros.",
+      allDone: "Muito bem! Completaste o nivel 1. O nivel 2 esta aberto.",
+      nextLocked: "Os proximos niveis abrem depois dos 100 numeros.",
+      gearOpen: "O nivel 3 esta aberto. Gira e resolve a engrenagem.",
+      advancedOpen: "O nivel 4 esta aberto. Mistura e organiza de 11 a 220.",
+      primeOpen: "O nivel 5 esta aberto. Explora a engrenagem dos primos.",
+      planeSelected: "Plano {plane} selecionado. Os numeros vao de {start} a {end}.",
+      gearMixed: "Os planos estao misturados. Leva cada plano ao guia de cima.",
+      gearReset: "Reiniciado. O guia le 1 a 10 de dentro para fora.",
+      advancedPlaneSelected: "Plano {plane} selecionado. Os numeros vao de {start} a {end}.",
+      advancedMixed: "Os planos coloridos estao misturados. Escolhe um e alinha-o.",
+      advancedReset: "Reiniciado. O guia de cima esta correto.",
+      primePlaneSelected: "Plano {plane} selecionado. Estes primos vao de {start} a {end}.",
+      primeMixed: "Os planos primos estao misturados. Escolhe um e alinha-o.",
+      primeReset: "Reiniciado. A engrenagem prima voltou ao inicio.",
+      addGuide: "Adicionar e juntar grupos e depois contar todos.",
+      subtractGuide: "Subtrair e tirar alguns e contar o que fica.",
+      rotateGuide: "Usa as setas para girar o plano escolhido.",
+      languageChanged: "Lingua alterada para {language}.",
+    },
+  },
+  ar: {
+    name: "Arabic",
+    locale: "ar-SA",
+    dir: "rtl",
+    numbers: {
+      belowTwenty: ["صفر", "واحد", "اثنان", "ثلاثة", "اربعة", "خمسة", "ستة", "سبعة", "ثمانية", "تسعة", "عشرة", "احد عشر", "اثنا عشر", "ثلاثة عشر", "اربعة عشر", "خمسة عشر", "ستة عشر", "سبعة عشر", "ثمانية عشر", "تسعة عشر"],
+      tens: ["", "", "عشرون", "ثلاثون", "اربعون", "خمسون", "ستون", "سبعون", "ثمانون", "تسعون"],
+      hundred: "مئة",
+    },
+    text: {
+      interpreterTitle: "مترجم بصري",
+      interpreterGesture: "انظر واستمع",
+      interpreterIntro: "اختر اللغة، ثم اضغط الارقام والازرار. سأرشدك هنا.",
+      levelSelected: "اخترت المستوى {level}. اتبع النشاط على الشاشة.",
+      numberTouched: "هذا هو الرقم {number}. استمع وانظر وتذكر شكله.",
+      sayNumber: "استمع جيدا. هذا الرقم هو {number}.",
+      findNumber: "الدرس {lesson}: انظر الى العلامة ثم اضغط الرقم الصحيح.",
+      correct: "{number}، احسنت.",
+      wrong: "حاول مرة اخرى، هذا هو الرقم {number}.",
+      lessonComplete: "لقد اكملت هذا الدرس.",
+      lessonCompleteText: "اكتمل الدرس {lesson}. يمكنك المتابعة او اختيار درس اخر.",
+      mapFirst: "اولا اضغط واستمع الى كل الارقام في خريطة الارقام.",
+      mapComplete: "عمل رائع! تعلمت الارقام من 1 الى 100. ابدأ التعرف على الارقام.",
+      allDone: "عمل رائع! اكملت المستوى 1. تم فتح المستوى 2.",
+      nextLocked: "تفتح المستويات التالية بعد تعلم كل الارقام المئة.",
+      gearOpen: "تم فتح المستوى 3. ادر الترس وحل المسألة.",
+      advancedOpen: "تم فتح المستوى 4. اخلط المستويات ثم رتب 11 الى 220.",
+      primeOpen: "تم فتح المستوى 5. استكشف ترس الاعداد الاولية.",
+      planeSelected: "تم اختيار المستوى {plane}. ارقامه من {start} الى {end}.",
+      gearMixed: "تم خلط المستويات. اعد كل مستوى الى الدليل العلوي.",
+      gearReset: "تمت الاعادة. الدليل العلوي يقرأ من 1 الى 10 من الداخل الى الخارج.",
+      advancedPlaneSelected: "تم اختيار المستوى {plane}. ارقامه من {start} الى {end}.",
+      advancedMixed: "تم خلط المستويات الملونة. اختر مستوى ثم حاذه.",
+      advancedReset: "تمت الاعادة. الدليل العلوي صحيح.",
+      primePlaneSelected: "تم اختيار المستوى {plane}. الاعداد الاولية من {start} الى {end}.",
+      primeMixed: "تم خلط مستويات الاعداد الاولية. اختر مستوى ثم حاذه.",
+      primeReset: "تمت الاعادة. عاد ترس الاعداد الاولية الى البداية.",
+      addGuide: "الجمع يعني ضم المجموعات ثم عدها كلها.",
+      subtractGuide: "الطرح يعني اخذ بعضها ثم عد ما تبقى.",
+      rotateGuide: "استخدم الاسهم لتدوير المستوى المختار.",
+      languageChanged: "تم تغيير اللغة الى {language}.",
+    },
+  },
+};
+
 const mastered = new Set(readStoredNumbers("numberGearMastered"));
 const mapLearned = new Set(readStoredNumbers("numberGearMapLearned"));
 let currentTarget = 1;
@@ -95,7 +356,9 @@ const primePlaneRotations = Array.from({ length: 11 }, () => 0);
 const lessonCycleSeen = Array.from({ length: 11 }, () => new Set());
 const developmentUnlockLevelTwo = true;
 const developmentUnlockIdentification = true;
-const speechLocale = "en-KE";
+let currentLanguage = localStorage.getItem("numberGearLanguage") || "en";
+if (!languagePacks[currentLanguage]) currentLanguage = "en";
+let speechLocale = languagePacks[currentLanguage].locale;
 const preferredFemaleVoiceNames = [
   "zira",
   "hazel",
@@ -104,6 +367,23 @@ const preferredFemaleVoiceNames = [
   "natasha",
   "aria",
   "jenny",
+  "samantha",
+  "victoria",
+  "karen",
+  "moira",
+  "tessa",
+  "serena",
+  "shelley",
+  "martha",
+  "sara",
+  "joanna",
+  "salli",
+  "ivy",
+  "emma",
+  "amy",
+  "olivia",
+  "ava",
+  "neural female",
   "female",
   "woman",
 ];
@@ -298,6 +578,11 @@ const primeSpinLeft = document.querySelector("#primeSpinLeft");
 const primeSpinRight = document.querySelector("#primeSpinRight");
 const primeShuffleGear = document.querySelector("#primeShuffleGear");
 const primeResetGear = document.querySelector("#primeResetGear");
+const languageSelect = document.querySelector("#languageSelect");
+const interpreterAvatar = document.querySelector("#interpreterAvatar");
+const interpreterTitle = document.querySelector("#interpreterTitle");
+const interpreterGesture = document.querySelector("#interpreterGesture");
+const interpreterText = document.querySelector("#interpreterText");
 let gearPlaneBand = 4.6;
 let gearFirstOuter = 8.4;
 let advancedGearPlaneBand = 3.85;
@@ -330,6 +615,52 @@ function numberToWord(number) {
   return ones === 0 ? tensWords[tens] : `${tensWords[tens]} ${wordsBelowTwenty[ones]}`;
 }
 
+function t(key, values = {}) {
+  const pack = languagePacks[currentLanguage] || languagePacks.en;
+  const template = pack.text[key] || languagePacks.en.text[key] || key;
+  return template.replace(/\{(\w+)\}/g, (_, name) => values[name] ?? "");
+}
+
+function numberToLocalizedWord(number, language = currentLanguage) {
+  const pack = languagePacks[language] || languagePacks.en;
+  const numberPack = pack.numbers;
+  if (number < 20) return numberPack.belowTwenty[number];
+  if (number === 100) return numberPack.hundred;
+  const tens = Math.floor(number / 10);
+  const ones = number % 10;
+  if (ones === 0) return numberPack.tens[tens];
+  if (language === "en") return `${numberPack.tens[tens]} ${numberPack.belowTwenty[ones]}`;
+  if (language === "sw") return `${numberPack.tens[tens]} na ${numberPack.belowTwenty[ones]}`;
+  if (language === "fr") return `${numberPack.tens[tens]} ${numberPack.belowTwenty[ones]}`;
+  if (language === "es") return `${numberPack.tens[tens]} y ${numberPack.belowTwenty[ones]}`;
+  if (language === "pt") return `${numberPack.tens[tens]} e ${numberPack.belowTwenty[ones]}`;
+  if (language === "ar") return `${numberPack.belowTwenty[ones]} و ${numberPack.tens[tens]}`;
+  return numberToWord(number);
+}
+
+function updateInterpreter(key = "interpreterIntro", values = {}, gesture = "wave") {
+  interpreterTitle.textContent = t("interpreterTitle");
+  interpreterGesture.textContent = t("interpreterGesture");
+  interpreterText.textContent = t(key, values);
+  interpreterAvatar.classList.remove("wave", "point", "clap");
+  window.requestAnimationFrame(() => {
+    interpreterAvatar.classList.add(gesture);
+  });
+}
+
+function changeLanguage(language) {
+  currentLanguage = languagePacks[language] ? language : "en";
+  speechLocale = languagePacks[currentLanguage].locale;
+  localStorage.setItem("numberGearLanguage", currentLanguage);
+  document.documentElement.lang = currentLanguage;
+  document.documentElement.dir = languagePacks[currentLanguage].dir;
+  languageSelect.value = currentLanguage;
+  renderLevelOne();
+  renderNumberGrid();
+  renderProgress();
+  updateInterpreter("languageChanged", { language: languagePacks[currentLanguage].name }, "wave");
+}
+
 function shuffle(values) {
   return [...values].sort(() => Math.random() - 0.5);
 }
@@ -355,6 +686,7 @@ function practiseChartNumber(number) {
   renderNumberGrid();
   renderProgress();
   speakNumber(number);
+  updateInterpreter("numberTouched", { number: numberToLocalizedWord(number) }, "point");
 
   if (!completedBeforeThisTap && mapLearned.size === 100) {
     revealIdentification();
@@ -399,13 +731,13 @@ function randomNumber(min, max) {
 
 function renderLevelOne() {
   targetNumber.textContent = currentTarget;
-  targetWord.textContent = numberToWord(currentTarget);
+  targetWord.textContent = numberToLocalizedWord(currentTarget);
   renderPlaceValue(currentTarget);
   renderChoices();
   renderLessons();
   updateIdentificationLock();
   if (isMapComplete()) {
-    levelOneMessage.textContent = `Lesson ${currentLesson}: look at the sign, then tap the matching number.`;
+    levelOneMessage.textContent = t("findNumber", { lesson: currentLesson });
   }
 }
 
@@ -454,8 +786,10 @@ function checkChoice(button, number) {
   button.classList.add(isCorrect ? "correct" : "wrong");
 
   if (!isCorrect) {
-    levelOneMessage.textContent = `Try again. This sign is number ${currentTarget}.`;
-    speakPhrase(`Try again, this is number ${numberToWord(currentTarget)}.`);
+    const numberWord = numberToLocalizedWord(currentTarget);
+    levelOneMessage.textContent = t("wrong", { number: numberWord });
+    updateInterpreter("wrong", { number: numberWord }, "point");
+    speakPhrase(t("wrong", { number: numberWord }));
     return;
   }
 
@@ -470,17 +804,20 @@ function checkChoice(button, number) {
   const completedLessonCycleNow = !completedLessonCycleBeforeThisAnswer && isLessonCycleComplete(currentLesson);
 
   if (completedLessonCycleNow) {
-    levelOneMessage.textContent = `Lesson ${currentLesson} complete. You can keep practising or choose another lesson.`;
-    speakPhrase(`You have completed this lesson.`);
+    levelOneMessage.textContent = t("lessonCompleteText", { lesson: currentLesson });
+    updateInterpreter("lessonComplete", {}, "clap");
+    speakPhrase(t("lessonComplete"));
     setTimeout(() => {
-      window.alert("You have completed this lesson.");
+      window.alert(t("lessonComplete"));
       lessonCycleSeen[currentLesson].clear();
     }, 450);
   } else {
+    const numberWord = numberToLocalizedWord(currentTarget);
     levelOneMessage.textContent = isLessonComplete(currentLesson)
-      ? `Lesson ${currentLesson} complete. You can keep practising or choose another lesson.`
-      : `Great. ${currentTarget} is ${numberToWord(currentTarget)}.`;
-    speakPhrase(`${numberToWord(currentTarget)}, very good.`);
+      ? t("lessonCompleteText", { lesson: currentLesson })
+      : t("correct", { number: numberWord });
+    updateInterpreter("correct", { number: numberWord }, "clap");
+    speakPhrase(t("correct", { number: numberWord }));
   }
 
   if (!completedBeforeThisAnswer && mastered.size === 100) {
@@ -518,7 +855,7 @@ function renderNumberGrid() {
     button.type = "button";
     button.className = `number-tile${mapLearned.has(number) ? " mastered" : ""}`;
     button.textContent = number;
-    button.title = `${number}: ${numberToWord(number)}`;
+    button.title = `${number}: ${numberToLocalizedWord(number)}`;
     button.addEventListener("click", () => practiseChartNumber(number));
     numberGrid.append(button);
   });
@@ -549,19 +886,22 @@ function updateIdentificationLock() {
     button.disabled = !unlocked;
   });
   if (!unlocked) {
-    levelOneMessage.textContent = "First tap and listen to all numbers in the number map.";
+    levelOneMessage.textContent = t("mapFirst");
+    updateInterpreter("mapFirst", {}, "point");
   }
 }
 
 function revealIdentification() {
   updateIdentificationLock();
-  window.alert("Great job! You have learnt numbers 1 to 100. Now start number identification.");
+  updateInterpreter("mapComplete", {}, "clap");
+  window.alert(t("mapComplete"));
   chooseTarget(1);
 }
 
 function changeMapBatch(direction) {
   currentMapBatch = Math.min(5, Math.max(1, currentMapBatch + direction));
   renderNumberGrid();
+  updateInterpreter("numberTouched", { number: `${getMapBatchNumbers(currentMapBatch)[0]}-${getMapBatchNumbers(currentMapBatch)[19]}` }, "point");
 }
 
 function unlockGear() {
@@ -573,23 +913,25 @@ function unlockGear() {
   levelFourTab.removeAttribute("aria-disabled");
   levelFiveTab.classList.remove("locked");
   levelFiveTab.removeAttribute("aria-disabled");
-  gearMessage.textContent = "Level 3 is open. Spin and solve the gear.";
-  advancedGearMessage.textContent = "Level 4 is open. Mix the planes, then arrange 11 to 220.";
-  primeGearMessage.textContent = "Level 5 is open. Explore the prime number gear.";
+  gearMessage.textContent = t("gearOpen");
+  advancedGearMessage.textContent = t("advancedOpen");
+  primeGearMessage.textContent = t("primeOpen");
 }
 
 function completeLevelOne() {
   unlockGear();
-  levelOneMessage.textContent = "Excellent. You identified all numbers from 1 to 100.";
+  levelOneMessage.textContent = t("allDone");
+  updateInterpreter("allDone", {}, "clap");
   setTimeout(() => {
-    window.alert("Great job! You have successfully completed Level 1. Level 2 is now unlocked.");
+    window.alert(t("allDone"));
     showLevel(2);
   }, 500);
 }
 
 function showLevel(level) {
   if ((level === 2 || level === 3 || level === 4 || level === 5) && mastered.size < 100 && !developmentUnlockLevelTwo) {
-    levelOneMessage.textContent = "The next levels open after all 100 numbers are learned.";
+    levelOneMessage.textContent = t("nextLocked");
+    updateInterpreter("nextLocked", {}, "point");
     return;
   }
 
@@ -603,14 +945,16 @@ function showLevel(level) {
   levelThreeTab.classList.toggle("active", level === 3);
   levelFourTab.classList.toggle("active", level === 4);
   levelFiveTab.classList.toggle("active", level === 5);
+  updateInterpreter("levelSelected", { level }, "wave");
 }
 
 function speakCurrentNumber() {
+  updateInterpreter("sayNumber", { number: numberToLocalizedWord(currentTarget) }, "point");
   speakNumber(currentTarget);
 }
 
 function speakNumber(number) {
-  speakPhrase(numberToWord(number));
+  speakPhrase(numberToLocalizedWord(number));
 }
 
 function speakPhrase(text) {
@@ -618,21 +962,37 @@ function speakPhrase(text) {
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = speechLocale;
-  utterance.voice = findLocalVoice();
+  utterance.voice = findLocalVoice(speechLocale);
   utterance.rate = 0.62;
+  utterance.pitch = 1.08;
   window.speechSynthesis.speak(utterance);
 }
 
-function findLocalVoice() {
+function findLocalVoice(locale = speechLocale) {
   const voices = window.speechSynthesis.getVoices();
+  const localeRoot = locale.split("-")[0];
+  const isPreferredLadyVoice = (voice) =>
+    preferredFemaleVoiceNames.some((name) => voice.name.toLowerCase().includes(name));
   return (
-    voices.find((voice) => preferredFemaleVoiceNames.some((name) => voice.name.toLowerCase().includes(name))) ||
-    voices.find((voice) => voice.lang === speechLocale) ||
+    voices.find((voice) => voice.lang === locale && isPreferredLadyVoice(voice)) ||
+    voices.find((voice) => voice.lang.startsWith(localeRoot) && isPreferredLadyVoice(voice)) ||
+    voices.find((voice) => voice.lang === "en-KE" && isPreferredLadyVoice(voice)) ||
+    voices.find((voice) => voice.lang === "en-GB" && isPreferredLadyVoice(voice)) ||
+    voices.find((voice) => voice.lang === "en-US" && isPreferredLadyVoice(voice)) ||
+    voices.find((voice) => isPreferredLadyVoice(voice)) ||
+    voices.find((voice) => voice.lang === locale) ||
+    voices.find((voice) => voice.lang.startsWith(localeRoot)) ||
     voices.find((voice) => voice.lang === "en-GB") ||
     voices.find((voice) => voice.lang === "en-US") ||
     voices.find((voice) => voice.lang.startsWith("en")) ||
     null
   );
+}
+
+if ("speechSynthesis" in window) {
+  window.speechSynthesis.onvoiceschanged = () => {
+    findLocalVoice(speechLocale);
+  };
 }
 
 function buildGear() {
@@ -742,6 +1102,7 @@ function multiples(step, count) {
 
 function rotateGear(direction) {
   rotatePlane(selectedPlane, direction * 36);
+  updateInterpreter("rotateGuide", {}, "point");
 }
 
 function rotatePlane(plane, degrees) {
@@ -768,7 +1129,8 @@ function selectPlane(plane) {
     chip.textContent = value;
     selectedPlaneNumbers.append(chip);
   });
-  gearMessage.textContent = `Plane ${plane} selected. Its numbers are ${values[0]} to ${values[values.length - 1]}.`;
+  gearMessage.textContent = t("planeSelected", { plane, start: values[0], end: values[values.length - 1] });
+  updateInterpreter("planeSelected", { plane, start: values[0], end: values[values.length - 1] }, "point");
 }
 
 function mixGear() {
@@ -779,7 +1141,8 @@ function mixGear() {
     layer.style.transform = `rotate(${turns}deg)`;
     layer.style.setProperty("--plane-rotation", `${turns}deg`);
   }
-  gearMessage.textContent = "The planes are mixed. Turn each plane back to the top guide.";
+  gearMessage.textContent = t("gearMixed");
+  updateInterpreter("gearMixed", {}, "wave");
 }
 
 function alignAllPlanes() {
@@ -790,7 +1153,8 @@ function alignAllPlanes() {
     layer.style.setProperty("--plane-rotation", "0deg");
   }
   selectPlane(1);
-  gearMessage.textContent = "Reset. The top guide now reads 1 to 10 from inside to outside.";
+  gearMessage.textContent = t("gearReset");
+  updateInterpreter("gearReset", {}, "clap");
 }
 
 function toggleGearOperationPanel() {
@@ -813,6 +1177,7 @@ function setGearOperation(operation) {
   gearSubtractionTab.classList.toggle("active", operation === "subtraction");
   renderGearExampleList();
   makeGearOperationExample();
+  updateInterpreter(operation === "addition" ? "addGuide" : "subtractGuide", {}, "point");
 }
 
 function renderGearExampleList() {
@@ -1035,6 +1400,7 @@ function advancedPlaneValues(plane) {
 
 function rotateAdvancedGear(direction) {
   rotateAdvancedPlane(selectedAdvancedPlane, direction * 36);
+  updateInterpreter("rotateGuide", {}, "point");
 }
 
 function rotateAdvancedPlane(plane, degrees) {
@@ -1061,7 +1427,8 @@ function selectAdvancedPlane(plane) {
     chip.textContent = value;
     advancedSelectedNumbers.append(chip);
   });
-  advancedGearMessage.textContent = `Plane ${plane} selected. Its numbers are ${values[0]} to ${values[values.length - 1]}.`;
+  advancedGearMessage.textContent = t("advancedPlaneSelected", { plane, start: values[0], end: values[values.length - 1] });
+  updateInterpreter("advancedPlaneSelected", { plane, start: values[0], end: values[values.length - 1] }, "point");
 }
 
 function mixAdvancedGear() {
@@ -1072,7 +1439,8 @@ function mixAdvancedGear() {
     layer.style.transform = `rotate(${turns}deg)`;
     layer.style.setProperty("--plane-rotation", `${turns}deg`);
   }
-  advancedGearMessage.textContent = "The 11 colored planes are mixed. Pick a plane counter, then line it back up with the top guide.";
+  advancedGearMessage.textContent = t("advancedMixed");
+  updateInterpreter("advancedMixed", {}, "wave");
 }
 
 function resetAdvancedGear() {
@@ -1083,7 +1451,8 @@ function resetAdvancedGear() {
     layer.style.setProperty("--plane-rotation", "0deg");
   }
   selectAdvancedPlane(1);
-  advancedGearMessage.textContent = "Reset. The top guide now reads 11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121.";
+  advancedGearMessage.textContent = t("advancedReset");
+  updateInterpreter("advancedReset", {}, "clap");
 }
 
 function buildPrimeGear() {
@@ -1210,6 +1579,7 @@ function isPrime(number) {
 
 function rotatePrimeGear(direction) {
   rotatePrimePlane(selectedPrimePlane, direction * 36);
+  updateInterpreter("rotateGuide", {}, "point");
 }
 
 function rotatePrimePlane(plane, degrees) {
@@ -1236,7 +1606,8 @@ function selectPrimePlane(plane) {
     chip.textContent = value;
     primeSelectedNumbers.append(chip);
   });
-  primeGearMessage.textContent = `Plane ${plane} selected. These prime numbers are ${values[0]} to ${values[values.length - 1]}.`;
+  primeGearMessage.textContent = t("primePlaneSelected", { plane, start: values[0], end: values[values.length - 1] });
+  updateInterpreter("primePlaneSelected", { plane, start: values[0], end: values[values.length - 1] }, "point");
 }
 
 function mixPrimeGear() {
@@ -1247,7 +1618,8 @@ function mixPrimeGear() {
     layer.style.transform = `rotate(${turns}deg)`;
     layer.style.setProperty("--plane-rotation", `${turns}deg`);
   }
-  primeGearMessage.textContent = "The prime planes are mixed. Pick a plane counter, then line it up with the top guide.";
+  primeGearMessage.textContent = t("primeMixed");
+  updateInterpreter("primeMixed", {}, "wave");
 }
 
 function resetPrimeGear() {
@@ -1258,7 +1630,8 @@ function resetPrimeGear() {
     layer.style.setProperty("--plane-rotation", "0deg");
   }
   selectPrimePlane(1);
-  primeGearMessage.textContent = "Reset. The top guide starts with the first prime on each plane.";
+  primeGearMessage.textContent = t("primeReset");
+  updateInterpreter("primeReset", {}, "clap");
 }
 
 function makeGearQuestion() {
@@ -1399,7 +1772,10 @@ function checkBeginnerChoice(button, number) {
     ? `Yes. There are ${formatCountNoun(beginnerExample.count, beginnerExample.item, true)}.`
     : `Try again. Count the ${beginnerExample.label.toLowerCase()} one by one.`;
   if (correct) {
+    updateInterpreter("correct", { number: numberToLocalizedWord(beginnerExample.count) }, "clap");
     speakPhrase(`${formatCountNoun(beginnerExample.count, beginnerExample.item, true)}, correct`);
+  } else {
+    updateInterpreter("wrong", { number: numberToLocalizedWord(beginnerExample.count) }, "point");
   }
 }
 
@@ -1436,6 +1812,7 @@ function setCounterOperation(operation) {
   additionTab.classList.toggle("active", operation === "addition");
   subtractionTab.classList.toggle("active", operation === "subtraction");
   renderCounterExamples();
+  updateInterpreter(operation === "addition" ? "addGuide" : "subtractGuide", {}, "point");
 }
 
 function getCounterExamples() {
@@ -1478,6 +1855,7 @@ function renderCounterExamples() {
     button.addEventListener("click", () => {
       counterExample = example;
       renderCounterEquation();
+      updateInterpreter(counterOperation === "addition" ? "addGuide" : "subtractGuide", {}, "point");
     });
     formulaRow.append(button);
   });
@@ -1489,6 +1867,7 @@ function resetCounterExamples() {
   const totalExamples = 9;
   counterExampleSet = (counterExampleSet + 3) % totalExamples;
   renderCounterExamples();
+  updateInterpreter(counterOperation === "addition" ? "addGuide" : "subtractGuide", {}, "wave");
 }
 
 function renderCounterEquation(result = "?") {
@@ -1500,6 +1879,7 @@ function renderCounterEquation(result = "?") {
 async function computeCounterExample() {
   computeCounters.disabled = true;
   counterStage.innerHTML = "";
+  updateInterpreter(counterOperation === "addition" ? "addGuide" : "subtractGuide", {}, "point");
 
   if (counterOperation === "addition") {
     await computeAdditionCounters(counterExample.a, counterExample.b);
@@ -1583,7 +1963,7 @@ async function countIntoGroup(group, start, end) {
     const stick = document.createElement("span");
     stick.className = "counter-stick";
     sticks.append(stick);
-    await speakAndPause(numberToWord(number));
+    await speakAndPause(numberToLocalizedWord(number));
   }
 }
 
@@ -1596,7 +1976,7 @@ async function moveSticksAway(startGroup, takenGroup, count) {
     const movedStick = document.createElement("span");
     movedStick.className = "counter-stick moved";
     takenSticks.append(movedStick);
-    await speakAndPause(numberToWord(index + 1));
+    await speakAndPause(numberToLocalizedWord(index + 1));
   }
 }
 
@@ -1635,6 +2015,7 @@ function setThingsType(type) {
   toysTab.classList.toggle("active", type === "toys");
   thingsExampleSet = 0;
   renderThingsExamples();
+  updateInterpreter("numberTouched", { number: type === "fruits" ? "fruits" : "toys" }, "point");
 }
 
 function setThingsOperation(operation) {
@@ -1643,6 +2024,7 @@ function setThingsOperation(operation) {
   thingsSubtractionTab.classList.toggle("active", operation === "subtraction");
   thingsExampleSet = 0;
   renderThingsExamples();
+  updateInterpreter(operation === "addition" ? "addGuide" : "subtractGuide", {}, "point");
 }
 
 function getThingsExamples() {
@@ -1680,6 +2062,7 @@ function renderThingsExamples() {
     button.addEventListener("click", () => {
       thingsExample = example;
       renderThingsEquation();
+      updateInterpreter(thingsOperation === "addition" ? "addGuide" : "subtractGuide", {}, "point");
     });
     thingsFormulaRow.append(button);
   });
@@ -1702,11 +2085,13 @@ function pickThingForExample(example) {
 function resetThingsExampleSet() {
   thingsExampleSet = (thingsExampleSet + 3) % 6;
   renderThingsExamples();
+  updateInterpreter(thingsOperation === "addition" ? "addGuide" : "subtractGuide", {}, "wave");
 }
 
 async function computeThingsExample() {
   computeThings.disabled = true;
   thingsStage.innerHTML = "";
+  updateInterpreter(thingsOperation === "addition" ? "addGuide" : "subtractGuide", {}, "point");
 
   if (thingsOperation === "addition") {
     await computeThingsAddition(thingsExample.a, thingsExample.b);
@@ -1874,7 +2259,12 @@ thingsAdditionTab.addEventListener("click", () => setThingsOperation("addition")
 thingsSubtractionTab.addEventListener("click", () => setThingsOperation("subtraction"));
 resetThingsExamples.addEventListener("click", resetThingsExampleSet);
 computeThings.addEventListener("click", computeThingsExample);
+languageSelect.addEventListener("change", (event) => changeLanguage(event.target.value));
 
+languageSelect.value = currentLanguage;
+document.documentElement.lang = currentLanguage;
+document.documentElement.dir = languagePacks[currentLanguage].dir;
+updateInterpreter("interpreterIntro", {}, "wave");
 renderNumberGrid();
 renderProgress();
 if (developmentUnlockLevelTwo) {

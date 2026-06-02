@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Kenyan Sign Language video placeholder</title>
+  <desc id="desc">A placeholder frame for licensed Kenyan Sign Language video clips.</desc>
+  <rect width="640" height="360" fill="#172230"/>
+  <circle cx="320" cy="122" r="58" fill="#f2b17a"/>
+  <rect x="245" y="178" width="150" height="116" rx="44" fill="#5da9e9"/>
+  <path d="M246 212c-42 14-70 41-87 78" fill="none" stroke="#f2b17a" stroke-width="30" stroke-linecap="round"/>
+  <path d="M394 212c42 14 70 41 87 78" fill="none" stroke="#f2b17a" stroke-width="30" stroke-linecap="round"/>
+  <circle cx="299" cy="112" r="7" fill="#172230"/>
+  <circle cx="341" cy="112" r="7" fill="#172230"/>
+  <path d="M298 143c18 16 39 16 56 0" fill="none" stroke="#172230" stroke-width="8" stroke-linecap="round"/>
+  <text x="320" y="327" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="700" text-anchor="middle">Kenyan Sign Language</text>
+</svg>
